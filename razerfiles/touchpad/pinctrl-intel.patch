@@ -1,0 +1,16 @@
+--- a/drivers/pinctrl/intel/pinctrl-intel.c	2018-07-06 06:54:57.868732684 -0700
++++ b/drivers/pinctrl/intel/pinctrl-intel.c	2018-07-06 06:59:11.112087936 -0700
+@@ -985,10 +985,13 @@
+ 	 * cannot be used as IRQ because GPI_IS status bit will not be
+ 	 * updated by the host controller hardware.
+ 	 */
++#if 0
+ 	if (intel_pad_acpi_mode(pctrl, pin)) {
+ 		dev_warn(pctrl->dev, "pin %u cannot be used as IRQ\n", pin);
+ 		return -EPERM;
+ 	}
++#endif
++	dev_info(pctrl->dev, "pin %u for irq (hwirq=%ld)\n", pin, irqd_to_hwirq(d));
+ 
+ 	raw_spin_lock_irqsave(&pctrl->lock, flags);
+ 

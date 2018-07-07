@@ -1,0 +1,12 @@
+--- a/drivers/gpio/gpiolib.c	2018-07-06 08:06:53.010085176 -0700
++++ b/drivers/gpio/gpiolib.c	2018-07-06 08:08:00.452174929 -0700
+@@ -3238,6 +3238,9 @@
+  */
+ int gpiochip_lock_as_irq(struct gpio_chip *chip, unsigned int offset)
+ {
++	if (offset == 100)
++	 offset = 79;
++
+ 	struct gpio_desc *desc;
+ 
+ 	desc = gpiochip_get_desc(chip, offset);
