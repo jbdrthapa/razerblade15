@@ -75,6 +75,8 @@ Copy config from current kernel
 cp /boot/config-`uname -r` .config
 ```
 
+Clean source root
+
 ```
 make clean
 ```
@@ -96,3 +98,5 @@ Install newly built kernel
 ```
 sudo dpkg -i *.deb
 ```
+
+Reboot, hold shift down while Grub is loading, select the new kernel.
