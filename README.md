@@ -66,7 +66,7 @@ patch drivers/pinctrl/intel/pinctrl-intel.c < pinctrl-intel.patch
 Install compilation dependencies
 
 ```
-sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache flex
+sudo apt-get install bison git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache flex
 ```
 
 Copy config from current kernel
